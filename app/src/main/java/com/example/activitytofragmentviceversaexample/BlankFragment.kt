@@ -27,10 +27,13 @@ class BlankFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFramentInteractionListener) {
-            mListener = context as OnFramentInteractionListener
+//일단 지워놓고            mListener = context as OnFramentInteractionListener
         } else {
             throw RuntimeException("$context must implement onFragmentInteractionListener")
         }
+    }
+    fun setOnFragmentInteractionListener(listener : OnFramentInteractionListener) {
+        mListener = listener
     }
 
     override fun onDetach() {
